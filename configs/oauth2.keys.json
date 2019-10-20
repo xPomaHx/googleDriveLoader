@@ -1,0 +1,11 @@
+{
+  "web": {
+    "client_id": "352598691120-j45suep874tdm81kt5t2vip0hf953ltl.apps.googleusercontent.com",
+    "project_id": "dogwood-range-256523",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "ExzY7XgGrthKTuusgDucdZA7",
+    "redirect_uris": ["http://localhost/auth/google/redirect"]
+  }
+}
