@@ -1,0 +1,8 @@
+version: '3'
+services:
+  nodetest:
+    build: .
+    restart: always
+    ports:
+      - 80:80
+    command: sh -c 'npm start'

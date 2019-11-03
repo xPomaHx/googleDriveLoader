@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mywebapi-deployment
+  labels:
+    app: mywebapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mywebapi
+  template:
+    metadata:
+      labels:
+        app: mywebapi
+    spec:
+      containers:
+      - name: mywebapi
+        image: nodetest:1        
+        ports:
+        - containerPort: 80
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: mywebapi-service
+spec:
+  selector:
+    app: mywebapi
+  ports:
+    - port: 80
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: example-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /mywebapi
+          backend:
+            serviceName: mywebapi-service
+            servicePort: 80

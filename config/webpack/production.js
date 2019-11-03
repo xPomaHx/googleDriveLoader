@@ -1,25 +1,18 @@
 const path = require('path');
 
-const NodemonPlugin = require('nodemon-webpack-plugin');
-
 module.exports = {
-  devtool: 'eval',
-  watch: true,
-  mode: 'development',
-  entry: './index.js',
+  mode: 'production',
+  entry: path.resolve(__dirname, './../../index.js'),
   output: {
-    path: path.resolve('./dist'),
+    path: path.resolve(__dirname, './../../dist'),
     filename: 'index.js'
   },
   target: 'node',
   resolve: {
     alias: {
-      '@root': path.resolve(__dirname, './')
+      '@root': path.resolve(__dirname, './../../')
     }
   },
-  plugins: [
-    new NodemonPlugin() // Dong
-  ],
   module: {
     rules: [
       {

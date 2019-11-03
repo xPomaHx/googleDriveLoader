@@ -2,7 +2,7 @@ import path from 'path';
 import { google as googleapis } from 'googleapis';
 import fs from 'promise-fs';
 
-import keys from '@root/configs/oauth2.keys.json';
+import keys from '@root/settings/oauth2.keys.json';
 
 const tokenFilePath = path.resolve('data/google', 'tokens.json');
 const OAuth2 = new googleapis.auth.OAuth2(
